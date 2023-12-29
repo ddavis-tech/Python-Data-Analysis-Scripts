@@ -1,0 +1,38 @@
+import pandas as pd
+
+# Load your dataset
+# Replace 'your_dataset.csv' with the path to your CSV file
+df = pd.read_csv('your_dataset.csv')
+
+# Display the first 10 rows of the dataset before cleaning
+print("Initial state of the dataset:")
+print(df.head(10))
+
+# Handling Missing Values
+df.fillna(value, inplace=True)  # Replace 'value' with the method or value for filling missing data
+
+# Removing Duplicates
+df.drop_duplicates(inplace=True)
+
+# Standardizing Data Formats
+df['date_column'] = pd.to_datetime(df['date_column'], format='%Y-%m-%d')  # Replace 'date_column' with your column name
+
+# Handling Outliers
+# Use statistical methods or visualization techniques to identify and handle outliers
+
+# Dealing with Typos and Inconsistencies
+df['text_column'] = df['text_column'].str.lower()  # Convert text to lowercase for consistency
+
+# Handling Categorical Data
+df = pd.get_dummies(df, columns=['categorical_column'], prefix='category')  # One-hot encoding
+
+# Additional Cleaning Steps
+# Add any additional cleaning steps specific to your dataset
+
+# Display the first 10 rows of the cleaned dataset
+print("\nFirst 10 rows of the cleaned dataset:")
+print(df.head(10))
+
+# Save the cleaned dataset
+df.to_csv('cleaned_dataset.csv', index=False)
+print("\nCleaned dataset has been saved to 'cleaned_dataset.csv'")
