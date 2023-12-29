@@ -1,6 +1,7 @@
 import pandas as pd
 
 # Load your dataset
+# This is for a CSV file in general, doesn't matter if it's from Excel or Google Sheets.
 # Replace 'your_dataset.csv' with the path to your CSV file
 df = pd.read_csv('your_dataset.csv')
 
